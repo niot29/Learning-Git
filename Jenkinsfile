@@ -4,18 +4,14 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                build quietPeriod: 1, job: 'BuildJob'
             }
         }
         stage('Build') {
             steps {
-                echo 'Hello Build'
+                build quietPeriod: 1, job: 'First_Job'
             }
         }
-        stage('TEst') {
-            steps {
-                echo 'Hello test'
-            }
-        }
+      
     }
 }
